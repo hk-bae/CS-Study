@@ -30,8 +30,8 @@
 
 ## Operating System
 
-* 프로세스 & 스레드
-* 프로세스 주소 공간
+* [프로세스 & 스레드](https://github.com/hk-bae/CS-Study/blob/main/OS/PCB-and-Context-Swithcing.md)
+* [프로세스 주소 공간](https://github.com/hk-bae/CS-Study/blob/main/OS/Process-and-Thread.md)
 * 인터럽트(Interrupt)
 * 시스템 콜(System Call)
 * PCB와 Context Switching
