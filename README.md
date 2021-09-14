@@ -30,11 +30,11 @@
 
 ## Operating System
 
-* [프로세스 & 스레드](https://github.com/hk-bae/CS-Study/blob/main/OS/PCB-and-Context-Swithcing.md)
-* [프로세스 주소 공간](https://github.com/hk-bae/CS-Study/blob/main/OS/Process-and-Thread.md)
+* [프로세스 & 스레드](https://github.com/hk-bae/CS-Study/blob/main/OS/Process-and-Thread.md)
+* 프로세스 주소 공간
 * 인터럽트(Interrupt)
 * 시스템 콜(System Call)
-* PCB와 Context Switching
+* [PCB와 Context Switching](https://github.com/hk-bae/CS-Study/blob/main/OS/PCB-and-Context-Swithcing.md)
 * IPC(Inter Process Communication)
 * CPU 스케줄링
 * 데드락(DeadLock)
