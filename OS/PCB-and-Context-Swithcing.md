@@ -4,7 +4,7 @@
 
 ### 1-1 PCB 개요
 
-![스크린샷 2021-09-08 오후 11.42.21.png](PCB%E1%84%8B%E1%85%AA%20Context%20Switching%201e39e83f4ab1461b965092af352ed4ad/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7_2021-09-08_%EC%98%A4%ED%9B%84_11.42.21.png)
+<img width="570" alt="%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7%202021-09-08%20%EC%98%A4%ED%9B%84%2011 42 21" src="https://user-images.githubusercontent.com/68215452/133198526-fd031e56-056d-45d8-a044-a2c464a243cb.png">
 
 - PCB는 **특정 프로세스에 대한 중요한 정보**를 저장하고 있는 운영체제의 자료구조!
 - 운영체제는 프로세스를 관리하기 위해 **프로세스의 생성과 동시에 고유한 PCB를 생성**
@@ -29,11 +29,11 @@
 - 한 줄 요약
     - Context Switching을 할 때 프로세스에 대한 정보를 PCB에 저장하거나 빼온다!
 
-![스크린샷 2021-09-08 오후 11.33.31.png](PCB%E1%84%8B%E1%85%AA%20Context%20Switching%201e39e83f4ab1461b965092af352ed4ad/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7_2021-09-08_%EC%98%A4%ED%9B%84_11.33.31.png)
+<img width="207" alt="%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7%202021-09-08%20%EC%98%A4%ED%9B%84%2011 33 31" src="https://user-images.githubusercontent.com/68215452/133198520-6f65e4d2-3e3a-4ca1-afbb-c95158dad41e.png">
 
 - PCB에 저장되는 정보
     - 프로세스 식별자 (PID)
-    - [프로세스 상태 (new, ready, running, waiting, terminated)](https://www.notion.so/506b28a8c8904e8ea2bb76ebed421216)
+    - 프로세스 상태 (new, ready, running, waiting, terminated)
     - PC : 프로세스가 다음에 실행할 명령어의 주소
     - CPU 레지스터
     - CPU 스케줄링 정보 ( 프로세스 우선순위, 스케줄 큐에 대한 포인터 등)
