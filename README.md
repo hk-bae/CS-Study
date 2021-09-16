@@ -54,7 +54,7 @@
 * TCP / IP 흐름제어 & 혼잡제어
 * TCP vs UDP 
 * 대칭키 & 공개키
-* HTTP & HTTPS 
+* [HTTP & HTTPS](https://github.com/hk-bae/CS-Study/blob/main/Network/http-and-https.md)
 * 로드밸런싱 (Load Balancing)
 * Blocking & Non-Blocking I/O
 
