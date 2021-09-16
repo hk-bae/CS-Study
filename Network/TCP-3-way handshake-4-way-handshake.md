@@ -29,15 +29,17 @@
 
         **Circuit Switching**
 
-        ![스크린샷 2021-09-09 오후 5.04.25.png](TCP%203%20way%20handshake%20&%204%20way%20handshake%20f9e5afa06ec947e9a7a3a4b8273a7ab3/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2021-09-09_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_5.04.25.png)
+        <img width="492" alt="스크린샷_2021-09-09_오후_5 04 25" src="https://user-images.githubusercontent.com/40057032/133558556-35ef1245-22d2-42f8-a614-80e66ca75154.png">
 
+        
         - 하나의 회선을 할당받아 데이터를 주고받는 방식, 물리적 연결
         - 회선 전체를 독점하므로 끼어들 수 없고, 속도 성능 일정
         - 전화 등의 실시간 통신에 사용
 
         **Datagram Packet Switching**
 
-        ![스크린샷 2021-09-09 오후 5.04.48.png](TCP%203%20way%20handshake%20&%204%20way%20handshake%20f9e5afa06ec947e9a7a3a4b8273a7ab3/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2021-09-09_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_5.04.48.png)
+        <img width="542" alt="스크린샷_2021-09-09_오후_5 04 48" src="https://user-images.githubusercontent.com/40057032/133558562-d4822f2a-29d1-4e86-a450-bc4b28f85848.png">
+
 
         - 데이터를 패킷 단위로 쪼개어 전송, 라우터 알고리즘으로 여러 라우터를 거쳐 최종 목적지에 도달
         - 물리적 연결이 아님
@@ -52,28 +54,34 @@
 - **full duplex service** → 쌍방향 통신, 데이터 송수신을 위해 독립된 회선을 사용 (동시에 송수신 가능)
 - **piplined** → 한 window 안의 패킷은 ACK 받지 않고 한 번에 보내기 가능, 패킷의 수를 줄일 수 있다.
 
-    ![스크린샷 2021-09-09 오후 5.12.13.png](TCP%203%20way%20handshake%20&%204%20way%20handshake%20f9e5afa06ec947e9a7a3a4b8273a7ab3/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2021-09-09_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_5.12.13.png)
+    <img width="216" alt="스크린샷_2021-09-09_오후_5 12 13" src="https://user-images.githubusercontent.com/40057032/133558605-28663cc2-1223-414f-9c93-fa24e95cb63f.png">
+
 
 - **flow controlled** → 흐름 제어, 송신측의 속도를 조절하여 너무 많은 패킷이 전송되지 않게 한다
     - *Sliding Window*
 
-        ![스크린샷 2021-09-09 오후 5.37.33.png](TCP%203%20way%20handshake%20&%204%20way%20handshake%20f9e5afa06ec947e9a7a3a4b8273a7ab3/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2021-09-09_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_5.37.33.png)
+        <img width="622" alt="스크린샷_2021-09-09_오후_5 37 33" src="https://user-images.githubusercontent.com/40057032/133558620-1f2762e3-05f5-4b6c-b6b6-4f8e28dbb5a9.png">
+
 
         현재 윈도우에 포함된 모든 패킷 전송 → 전달 확인되는대로(ACK) 윈도우를 옆으로 옮김(Slide) → 윈도우 내 전송되지 않은 패킷 전송
 
 # TCP 연결 관리
 
-![스크린샷 2021-09-09 오후 5.13.57.png](TCP%203%20way%20handshake%20&%204%20way%20handshake%20f9e5afa06ec947e9a7a3a4b8273a7ab3/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2021-09-09_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_5.13.57.png)
+<img width="773" alt="스크린샷_2021-09-09_오후_5 13 57" src="https://user-images.githubusercontent.com/40057032/133558639-3f32d414-c519-4029-95ca-2de8a8fbd056.png">
+
 
 Finite State Machine
 
-![스크린샷 2021-09-09 오후 4.56.17.png](TCP%203%20way%20handshake%20&%204%20way%20handshake%20f9e5afa06ec947e9a7a3a4b8273a7ab3/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2021-09-09_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_4.56.17.png)
+<img width="524" alt="스크린샷_2021-09-09_오후_4 56 17" src="https://user-images.githubusercontent.com/40057032/133558661-71e7b8ee-6ea5-4d26-b3b3-c8fd269921a3.png">
+
 
 전체 전송 과정
 
 ## 연결 수립 - 3 way handshake
 
-![스크린샷 2021-09-09 오후 5.14.58.png](TCP%203%20way%20handshake%20&%204%20way%20handshake%20f9e5afa06ec947e9a7a3a4b8273a7ab3/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2021-09-09_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_5.14.58.png)
+<img width="964" alt="스크린샷_2021-09-09_오후_5 14 58" src="https://user-images.githubusercontent.com/40057032/133558756-8174d766-30ef-44a4-818c-5ec1e90c01f1.png">
+
+
 
 - TCP 통신을 위하여 네트워크를 연결하는 과정
 - 포트를 확인하고 연결하기 위하여 세 번의 요청과 응답이 이루어짐
@@ -91,7 +99,9 @@ Finite State Machine
 
 ## 연결 해제 - 4 way handshake
 
-![스크린샷 2021-09-09 오후 5.15.20.png](TCP%203%20way%20handshake%20&%204%20way%20handshake%20f9e5afa06ec947e9a7a3a4b8273a7ab3/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2021-09-09_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_5.15.20.png)
+<img width="899" alt="스크린샷_2021-09-09_오후_5 15 20" src="https://user-images.githubusercontent.com/40057032/133558745-b40a5a6e-e602-4082-826c-eaaca4437f2a.png">
+
+
 
 ### 해제 과정
 
@@ -103,7 +113,8 @@ Finite State Machine
 
 ### MSL - Maximum Segment Lifetime
 
-![스크린샷 2021-09-09 오후 5.18.14.png](TCP%203%20way%20handshake%20&%204%20way%20handshake%20f9e5afa06ec947e9a7a3a4b8273a7ab3/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2021-09-09_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_5.18.14.png)
+<img width="705" alt="스크린샷_2021-09-09_오후_5 18 14" src="https://user-images.githubusercontent.com/40057032/133558717-6c546eb5-ac1d-438f-b0a7-fdf0880c530d.png">
+
 
 - TCP 세그먼트가 네트워크 시스템에 존재할 수 있는 최대 시간 (보통 30초, 1분, 2분)
 - 서로 FIN 보내고 그 ACK를 받고 나면, 클라이언트는 MSL 만큼 기다린 후에 완전히 연결 해제
@@ -132,8 +143,9 @@ Finite State Machine
 
 # TCP 헤더
 
-![스크린샷 2021-09-08 오후 8.19.37.png](TCP%203%20way%20handshake%20&%204%20way%20handshake%20f9e5afa06ec947e9a7a3a4b8273a7ab3/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2021-09-08_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_8.19.37.png)
+![스크린샷_2021-09-08_오후_8 19 37](https://user-images.githubusercontent.com/40057032/133558814-a18ce7b6-a7fc-4b86-8486-dbd419e57e94.png)
+
 
 # 제어 비트
 
-![스크린샷 2021-09-08 오후 8.19.50.png](TCP%203%20way%20handshake%20&%204%20way%20handshake%20f9e5afa06ec947e9a7a3a4b8273a7ab3/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2021-09-08_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_8.19.50.png)
+![스크린샷_2021-09-08_오후_8 19 50](https://user-images.githubusercontent.com/40057032/133558809-01cd14d6-5407-4d91-8363-8e325a708dc6.png)
