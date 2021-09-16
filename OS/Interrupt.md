@@ -122,7 +122,9 @@
 
 ### 2-1. Computer System Operation
 
-![스크린샷 2021-09-14 오후 4.01.14](/Users/baehangyeol/Library/Application Support/typora-user-images/스크린샷 2021-09-14 오후 4.01.14.png)
+<img width="648" alt="image" src="https://user-images.githubusercontent.com/68215452/133606325-25e3db3c-775b-4586-a702-101fb033781d.png">
+
+
 
 
 
@@ -169,8 +171,10 @@
 
 * 인터럽트 처리 프로세스
 
-  ![스크린샷 2021-09-14 오후 4.30.41](/Users/baehangyeol/Library/Application Support/typora-user-images/스크린샷 2021-09-14 오후 4.30.41.png)
+  <img width="314" alt="image" src="https://user-images.githubusercontent.com/68215452/133606343-fe1b37a1-32a3-4c16-ba22-3f58809ffc80.png">
 
+  
+  
   1. 인터럽트가 발생한다.
   2. 시스템은 CPU의 현재 상태를 저장한다.
      * 인터럽트 처리 후 현재 상태로 돌아오게 된다.
@@ -204,13 +208,15 @@
 
 * **DMA I/O : Read Operation**
 
-  ![스크린샷 2021-09-14 오후 4.47.35](/Users/baehangyeol/Library/Application Support/typora-user-images/스크린샷 2021-09-14 오후 4.47.35.png)
+  <img width="684" alt="image" src="https://user-images.githubusercontent.com/68215452/133606363-7bf73275-8cc6-4e34-95bd-c15c349aaffb.png">
 
 
 
 * **DMA I/O : Write Operation**
 
-  ![스크린샷 2021-09-14 오후 4.48.07](/Users/baehangyeol/Library/Application Support/typora-user-images/스크린샷 2021-09-14 오후 4.48.07.png)
+  <img width="649" alt="image" src="https://user-images.githubusercontent.com/68215452/133606568-c9d2b2b6-cfed-4696-8b88-e3f2ec726381.png">
+  
+  
 
 ---
 
