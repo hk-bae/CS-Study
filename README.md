@@ -49,20 +49,13 @@
 
 ## Network
 
-* OSI 7 계층
-
-* TCP 3 way handshake & 4 way handshake
-
+* [OSI 7 계층](https://github.com/hk-bae/CS-Study/blob/main/Network/network-osi-7-layers.md)
+* [TCP 3 way handshake & 4 way handshake](https://github.com/hk-bae/CS-Study/blob/main/Network/TCP-3-way%20handshake-4-way-handshake.md)
 * TCP / IP 흐름제어 & 혼잡제어
-
 * TCP vs UDP 
-
 * 대칭키 & 공개키
-
 * HTTP & HTTPS 
-
 * 로드밸런싱 (Load Balancing)
-
 * Blocking & Non-Blocking I/O
 
   
@@ -72,7 +65,6 @@
 * 디자인패턴 개요(Overview)
 * 어댑터 패턴
 * 싱글톤 패턴
-
 * 탬플릿 메소드 패턴
 * 팩토리 메소드 패턴
 * 옵저버 패턴
