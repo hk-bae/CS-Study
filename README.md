@@ -51,14 +51,25 @@
 
 * [OSI 7 계층](https://github.com/hk-bae/CS-Study/blob/main/Network/network-osi-7-layers.md)
 * [TCP 3 way handshake & 4 way handshake](https://github.com/hk-bae/CS-Study/blob/main/Network/TCP-3-way%20handshake-4-way-handshake.md)
+* [HTTP & HTTPS](https://github.com/hk-bae/CS-Study/blob/main/Network/http-and-https.md)
 * TCP / IP 흐름제어 & 혼잡제어
 * TCP vs UDP 
-* 대칭키 & 공개키
-* [HTTP & HTTPS](https://github.com/hk-bae/CS-Study/blob/main/Network/http-and-https.md)
-* 로드밸런싱 (Load Balancing)
 * Blocking & Non-Blocking I/O
+* 웹의 동작 방식 (브라우저 주소창에 http://google.com 입력 후 엔터 눌렀을 때 페이지가 렌더링되는 과정)
+* DNS
+* 프록시 서버
+* RESTful API
+* HTTP Request Method
+* 브라우저 저장소
+* CORS
+* OAuth
+* Session, Cookie, Token의 차이
 
-  
+### Network 참고 자료
+- https://mangkyu.tistory.com/91
+- https://hyonee.tistory.com/136  
+- https://juicyjerry.tistory.com/196
+- https://minhamina.tistory.com/234
 
 ## Design Pattern
 
