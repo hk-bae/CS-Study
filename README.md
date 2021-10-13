@@ -56,7 +56,7 @@
 * TCP vs UDP 
 * Blocking & Non-Blocking I/O
 * 웹의 동작 방식 (브라우저 주소창에 http://google.com 입력 후 엔터 눌렀을 때 페이지가 렌더링되는 과정)
-* DNS
+* [DNS](https://github.com/hk-bae/CS-Study/blob/main/Network/dns.md)
 * 프록시 서버
 * RESTful API
 * HTTP Request Method
