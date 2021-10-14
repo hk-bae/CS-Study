@@ -2,7 +2,7 @@
 
 
 
-* 매주 목요일 오후 8시에 구글미트를 통해 진행
+* 매주 목요일 오후 9시에 구글미트를 통해 진행
 
 * 목차는  [gyoogle](https://github.com/gyoogle/tech-interview-for-developer) 를 참고하여 구성하였습니다.
 
@@ -26,6 +26,8 @@
 
 ## Database
 
+* [NoSQL](https://github.com/hk-bae/CS-Study/blob/main/Database/NoSQL.md)
+* [SQL](https://github.com/hk-bae/CS-Study/blob/main/Database/SQL.md)
 
 
 ## Operating System
@@ -36,7 +38,7 @@
 * 시스템 콜(System Call)
 * [PCB와 Context Switching](https://github.com/hk-bae/CS-Study/blob/main/OS/PCB-and-Context-Swithcing.md)
 * IPC(Inter Process Communication)
-* CPU 스케줄링
+* [CPU 스케줄링](https://github.com/hk-bae/CS-Study/blob/main/OS/CPU-Scheduling.md)
 * 데드락(DeadLock)
 * Race Condition
 * 세마포어(Semaphore) & 뮤텍스(Mutex)
@@ -73,7 +75,7 @@
 
 ## Design Pattern
 
-* 디자인패턴 개요(Overview)
+* [디자인패턴 개요(Overview)](https://github.com/hk-bae/CS-Study/blob/main/DesignPattern/Summary-of-DesignPattern.md)
 * 어댑터 패턴
 * 싱글톤 패턴
 * 탬플릿 메소드 패턴
