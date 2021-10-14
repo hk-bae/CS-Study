@@ -73,13 +73,17 @@
 
 1. Recursive 쿼리 (기본값)
   - 실제 domain name을 가지고 있는 서버까지 쿼리가 전달되어 IP 주소를 얻음
-  - 요청된 쿼리에 대하여 응답을 할 수 없으면, 응답을 줄 수 있는 서버에 직접 요청을 보냄
+  - 요청된 쿼리에 대하여 응답을 할 수 없으면, 응답을 줄 수 있는 서버에 직접 요청을 보냄   
+  - root 서버에 부담이 될 수 있음   
   ![image](https://user-images.githubusercontent.com/40057032/137142710-c3597e1c-a242-4091-ab34-1cc8aaa6d2e1.png)
 
 2. Iterative 쿼리 (non-recursive)
   - 최종 IP 주소를 받을 때까지 local name server가 요청&응답을 반복
-  - 요청된 쿼리에 대하여 응답을 할 수 없으면, 응답을 줄 수 있는 서버에 대한 정보를 알려줌
+  - 요청된 쿼리에 대하여 응답을 할 수 없으면, 응답을 줄 수 있는 서버에 대한 정보를 알려줌   
   ![image](https://user-images.githubusercontent.com/40057032/137142696-028a125e-d0b7-443e-a666-860d2dc007af.png)
+
+- 실제로는 두 방법을 혼합하여 사용
+![image](https://user-images.githubusercontent.com/40057032/137317983-4b2fb95f-b1d6-4fc7-b467-ab4aac36a8e3.png)
 
 
 ### DNS 캐싱
