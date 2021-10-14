@@ -126,3 +126,8 @@
         클래스나 객체들이 서로 상호작용하는 방법이나 어떤 작업을 어떤 클래스로 어떻게 할당할지 정의하는 패턴이다. 행위 패턴은 하나의 객체로 수행할 수 없는 작업을 여러 객체로 분배하면서 그들 간의 결합도를 최소화 할 수 있도록 도와준다.
         
         *ex) 하위 클래스에서 구현해야 하는 함수 및 알고리즘들을 미리 선언하여, 상속시 이를 필수로 구현하도록 함.*
+<br>
+https://github.com/gyoogle/tech-interview-for-developer/blob/master/Design%20Pattern/%5BDesign%20Pattern%5D%20Overview.md
+https://4z7l.github.io/2020/12/25/design_pattern_GoF.html
+https://github.com/WeareSoft/tech-interview/blob/master/contents/designpattern.md#%EB%94%94%EC%9E%90%EC%9D%B8-%ED%8C%A8%ED%84%B4%EC%9D%98-%EA%B0%9C%EB%85%90%EA%B3%BC-%EC%A2%85%EB%A5%98
+
