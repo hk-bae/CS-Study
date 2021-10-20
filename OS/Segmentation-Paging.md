@@ -1,24 +1,24 @@
 # Segmentaion & Paging
 
 * 고정 분할 기법, 동적 분할 기법은 많은 문제점을 가지고 있습니다.
+
   * 단편화 문제
   * 메모리의 배치와 관리가 어렵다.
   * 프로세스에게 메모리 할당을 늘리거나 줄이기 어렵다.
   * 메모리가 보호받기 어렵다
 
 
-
 ## Segmentation
 
 * 세그멘테이션은 동적 분할 기법을 확장한 방법으로 **주소 공간을 서로 다른 크기를 가진 논리적 블록(segments)으로 나누어 각 세그먼트를 PA의 연속적인 공간에 배치**하는 것입니다.
+
 * 프로세스와 CPU는 <segment #, offset> 의 형태로 메모리 공간을 바라보게 됩니다.
+
 * 논리 주소는 explicit하게 또는 implicit하게 표현됩니다.
   * explicit : <segment id, offset> ex) <0x01, 0x2a31>
   * implicit : 0x012a31
 
-
-
-[Seg1]
+<img width="637" alt="seg1" src="https://user-images.githubusercontent.com/68215452/138043321-73e854ae-034e-4753-b9c2-72a124830923.png">
 
 * 위 그림은 세그먼트를 Code, Data, Heap,Stack를 기준으로 나누었습니다.
 
@@ -47,13 +47,14 @@
 * 단점
 
   * 여전히 세그먼트 자체는 연속적인 공간에 할당됩니다. 서로 다른 크기의 세그먼트들이 메모리에 적재되고 제거되는 일이 반복되다 보면, 작은 여유 공간들이 생기기 마련이고 이에 따라 **외부 단편화 문제**가 발생할 수 있습니다.
+  
   * 지원하는 세그먼트 숫자의 개수가 많아질 수록 세그먼트 테이블의 크기가 커져 오버헤드가 발생합니다.
 
 
 
 ## Paging
 
-[paging1]
+<img width="660" alt="paging1" src="https://user-images.githubusercontent.com/68215452/138043083-3311d406-7292-412f-b8ab-fb70eca29372.png">
 
 * 프로세스의 물리 주소공간을 비연속적으로 사용할 수 있습니다. 하나의 프로세스가 사용하는 메모리 공간이 연속적이어야 한다는 제약을 없애는 메모리 관리 방법입니다. 
 
@@ -90,7 +91,7 @@
 
 * 각 페이지 당 PTE(Page Table Entry)를 하나씩 갖게 됩니다.
 
-  [paging3]
+  <img width="544" alt="paging3" src="https://user-images.githubusercontent.com/68215452/138043074-77b9c379-49a5-4778-bdf2-44becbe88caa.png">
 
   `V` : PTE를 사용할 수 있는지 없는지 Valid 여부, Invalid인 경우 할당되지 않은 주소공간임.
 
@@ -104,7 +105,7 @@
 
 * **VPN(Virtual Page Number)**를 **PFN(Page Frame Number)**로 맵핑 시켜 줍니다.
 
-  [paging2]
+  <img width="697" alt="paging2" src="https://user-images.githubusercontent.com/68215452/138043078-5255ee87-c566-4aca-8df0-b234749bc134.png">
 
   1. LA의 V를 통해 Page Table에서 해당 PTE를 찾는다.
   2. 이를 PFN으로 변환하고 offset과 함께 Physical Address에 접근한다.
@@ -115,21 +116,23 @@
 
 ### Linear Page Table
 
-[paging3]
+<img width="655" alt="paging4" src="https://user-images.githubusercontent.com/68215452/138043069-fe63220f-7492-4692-b5f4-51734462db2b.png">
 
 * 모든 virtual Adrress의 Page를 순서대로 다 담아 놓은 page table이다. 즉 vpn 0부터 vpn N까지 쭉 늘려 놓은 것인데 이는 페이지 테이블에 많은 메모리 공간을 요구하기 때문에 잘 사용되지 않는다. 64bit 주소 공간, 8KB 페이지, 8bytes/PTE 기준으로 16PB의 엄청난 메모리 공간을 필요로 하기 때문이다 
 
 
 
 * 그렇기 때문에 페이지 테이블의 크기를 줄일 수 있는 설계가 필요하다. 실제 프로세스에서 주소 공간의 일부분만 접근되고 대부분의 공간은 접근조차 하지 않게 됩니다. 따라서 다음과 같은 방안들을 생각해 볼 수 있습니다.
+
   * 전체 페이지 테이블을 작은 페이지 테이블로 분할한다. 이 때 분할된 페이지 테이블은 하나의 페이지 크기에 들어갈 수 있도록 맞춘다.
+  
   * 주소 공간에 실제로 사용되는 부분만 맵핑시키도록 한다.
 
 
 
 ### Hierarchical page Tables
 
-[paing4]
+<img width="601" alt="스크린샷 2021-10-20 오후 4 02 35" src="https://user-images.githubusercontent.com/68215452/138043891-c58e74c1-5c90-45bd-81a3-e749587d7c51.png">
 
 * 위 그림은 Two-level로 페이지를 나누어 둔 것이다. 
 
@@ -139,11 +142,12 @@
 
 * Virtual Addresses = **<outer page#, page#, page offset>** 
 
-  [paging5]
+  <img width="590" alt="paging5" src="https://user-images.githubusercontent.com/68215452/138043066-d3a4516c-b6aa-4071-9eee-8f5317d6c30d.png">
+
 
   * Virtual Address의 outer page#을 통해 Outer Page Table에서 Page Table의 Base Address를 가져온다. 이와 Page #을 조합하여 Page Table내에서 PFN이 들어있는 곳을 찾는다. 해당 PFN과 page offset을 이용하여 physical address를 구할 수 있다.
 
-    [paging6]
+    <img width="673" alt="paging6" src="https://user-images.githubusercontent.com/68215452/138043058-50ed03d8-c3bf-409c-8f38-b96f03746382.png">
 
     
 
@@ -160,7 +164,7 @@
 
 ### Hashed Page Table
 
-[paging9]
+<img width="575" alt="paging9" src="https://user-images.githubusercontent.com/68215452/138043024-e6613df7-45bd-45bb-896b-c1d71f550455.png">
 
 * VPN을 PFN으로 변경해주는 Hash Table을 사용하는 방법.
 * 해시 테이블의 문제점 : 충돌 문제에 따른 비용 증가
@@ -169,7 +173,7 @@
 
 ### Inverted Page Table
 
-[paging10]
+<img width="456" alt="paging10" src="https://user-images.githubusercontent.com/68215452/138043013-966705a0-53c1-4fbb-8a25-9b319e3eec08.png">
 
 * PFN -> <PID,VPN>을 찾아내는 방법이다. 즉 PA를 보고 VA를 찾아내는 방식이다.
 * 페이지 테이블을 Frame의 관점에서 작성한 것이다. 페이지 테이블에서 LA의 (pid,p)를 조회하여 이를 프레임 주소로 변환하는 방식
@@ -187,7 +191,7 @@
 
 
 
-[paging7]
+<img width="695" alt="paging7" src="https://user-images.githubusercontent.com/68215452/138043035-ae43f6dd-8d10-4655-baae-00efaa5f5af0.png">
 
 * TLB miss시 MMU는 페이지 테이블을 확인하고 변환 결과를 TLB에 저장합니다.
 * TLB Hit시 페이지 테이블을 거치치 않고 VA를 PA로 변환할 수 있습니다.
@@ -247,7 +251,7 @@ Main Memory [`p0`,`p0`,`p0`,`p1`,`p2`]
 
 **Page Fault** **처리 과정**
 
-[paging8]
+<img width="623" alt="paging8" src="https://user-images.githubusercontent.com/68215452/138043025-0cacb383-e730-4fcf-9733-91ea4c2fa88b.png">
 
 1. page table에서 페이지 조회
 2. PTE의 Valid bit가 Invalid이고 PFN이 swap entry로 되어있다면 Page Fault(**Trap**) 발생
@@ -381,6 +385,11 @@ Demand Paging에서 언급된대로 프로그램 실행 시에 모든 항목이 
 
   * OPT를 제대로 근사하지 못하기 때문에, 잘 쓰이지 않습니다.
 
+## 참고자료
+
+아주대학교 오상은 교수님 강의자료
+https://github.com/JaeYeopHan/Interview_Question_for_Beginner/tree/master/OS#%EA%B0%80%EC%83%81-%EB%A9%94%EB%AA%A8%EB%A6%AC
+https://github.com/gyoogle/tech-interview-for-developer
 
 
 
