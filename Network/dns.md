@@ -93,16 +93,24 @@
   - **문제)** 네임 호스트의 IP 주소가 바뀐다면?
     - TTL 만료 전까지 알아차리지 못할 수도 있다
     - **해결)** update/notify 메커니즘
+      - \* DNS 서버는 Master와 Slave의 주-보조 관계를 가지도록 이중화되어 있다.
+      - **원래 방식:** Slave는 마스터를 주기적으로 검사해 영역 데이터가 변경되었는지 확인함
+      - **DNS NOTIFY:** 마스터 네임서버가 영역 데이터가 변경된 것을 인지하면, 연결된 모든 슬레이브 서버에 알림을 전송 (영역 데이터 수시로 업데이트되는 환경에 적합)
+      - **IXFR(증진적 영역 전송):** 슬레이브 네임 서버가 자신의 영역 데이터를 마스터로 전송하고, 마스터 네임 서버가 가진 최신 버전 데이터만 받음 (전송 크기 ⬇️ 소요 시간 ⬇️)
 
 
 ## Resource Records (RRs)
 
 `RR format: (name, value, type, ttl)`
-- type=A
+- RR: DNS 데이터베이스 서버의 항목 하나를 가리키는 말
+- 이름: 서버의 이름
+- 타입: 이름의 타입 => 타입에 따라 클라이언트에 보내주는 정보 내용이 달라짐
+
+- type=A: 32비트 IP 주소를 반환
   - name = hostname
   - value = IP address
 - type=CNAME
-  - name = alias name for 'canonical' name
+  - name = 노드의 실제 이름(canonical name)을 가리키도록 정의한 별칭(alias) => 별칭과 정규 네임 사이의 매핑
   - value = canonical name
 - type=NS
   - name = domain
