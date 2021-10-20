@@ -33,18 +33,16 @@
 ## Operating System
 
 * [프로세스 & 스레드](https://github.com/hk-bae/CS-Study/blob/main/OS/Process-and-Thread.md)
-* 프로세스 주소 공간
 * [인터럽트(Interrupt)](https://github.com/hk-bae/CS-Study/blob/main/OS/Interrupt.md)
 * 시스템 콜(System Call)
 * [PCB와 Context Switching](https://github.com/hk-bae/CS-Study/blob/main/OS/PCB-and-Context-Swithcing.md)
 * IPC(Inter Process Communication)
 * [CPU 스케줄링](https://github.com/hk-bae/CS-Study/blob/main/OS/CPU-Scheduling.md)
+* Race Condition & Lock
+* 세마포어(Semaphore)
 * 데드락(DeadLock)
-* Race Condition
-* 세마포어(Semaphore) & 뮤텍스(Mutex)
-* 페이징 & 세그먼테이션 (PDF)
-* 페이지 교체 알고리즘
-* 메모리(Memory)
+* [고정분할기법 & 동적 분할 기법](OS/Fixed-Variable-Partitioning.md)
+* [페이징 & 세그먼테이션](OS/Segmentation-Paging.md)
 * 파일 시스템
 
 
