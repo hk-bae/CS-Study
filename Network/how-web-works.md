@@ -23,7 +23,7 @@
     3. 찾은 웹 페이지 데이터를 HTTP 프로토콜을 따라 응답 메시지를 생성하고 전송된다.
 4. 브라우저는 데이터 패킷을 웹 사이트로 조립하여 표시한다.
 
-## (참고) URI & URL
+### (참고) URI & URL
 
 - **URI(Uniform resource identifier)**: 통합 자원 식별자, 서버 리소스의 이름
 - **URL(Uniform resource locator)**: 통합 자원 지시자, URI의 한 종류
@@ -40,8 +40,32 @@
         
     - 리소스의 위치에 영향을 받지 않는 유일무이한 이름
 
+## 서버에서 일어나는 일
+
+![image](https://user-images.githubusercontent.com/40057032/138212663-a9c1698a-ddf8-4734-a31c-4d60cb72a65c.png)
+
+- 웹 서버
+    - 웹 페이지, 사이트, 앱 등을 저장하는 프로그램
+    - 클라이언트의 요청 HTTP 메시지를 확인하고 이에 맞게 데이터를 처리하여 클라이언트에 응답함
+    - 아파치 웹 서버, GWS, IIS 등
+- WAS(Web Application Server)
+    - 웹 어플리케이션을 수행하는 미들웨어, 웹 서버를 보조하여 동작
+    - 요청에 필요한 동적 페이지 로직을 처리하거나 DB에서 데이터 정보를 가져옴
+    - 아파치 톰캣, 레진, 제이런 등
+- DB(Data Base): 자원을 정리하여 저장하는 보관소
+
+### 동작 과정
+
+1. 클라이언트가 보낸 HTTP 요청 메시지를 웹 서버가 받아 확인한다
+2. 요청에 필요한 처리를 위해 웹 서버가 WAS에 처리를 요청한다   
+    1. 페이지 로직 처리   
+    2. 데이터베이스 연동: WAS가 DB에 SQL 질의 => DB가 WAS로 요청에 맞는 응답을 보냄   
+3. WAS가 처리를 끝내면 그 결과를 웹 서버로 보낸다
+4. 웹 서버는 요청에 필요한 데이터를 HTTP 응답 메시지로 클라이언트에게 전송한다
+
 ## 참고자료
 
 - [https://developer.mozilla.org/ko/docs/Learn/Getting_started_with_the_web/How_the_Web_works](https://developer.mozilla.org/ko/docs/Learn/Getting_started_with_the_web/How_the_Web_works)
 - [http://tcpschool.com/webbasic/works](http://tcpschool.com/webbasic/works)
 - [https://d2.naver.com/helloworld/59361](https://d2.naver.com/helloworld/59361)
+- https://swimjiy.github.io/2019-11-03-How-Web-Works
