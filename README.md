@@ -55,7 +55,8 @@
 * TCP / IP 흐름제어 & 혼잡제어
 * TCP vs UDP 
 * Blocking & Non-Blocking I/O
-* 웹의 동작 방식 (브라우저 주소창에 http://google.com 입력 후 엔터 눌렀을 때 페이지가 렌더링되는 과정)
+* [웹의 동작 방식](https://github.com/hk-bae/CS-Study/blob/main/Network/how-web-works.md)
+* 브라우저의 동작 방식
 * [DNS](https://github.com/hk-bae/CS-Study/blob/main/Network/dns.md)
 * 프록시 서버
 * RESTful API
@@ -65,7 +66,7 @@
 * OAuth
 * Session, Cookie, Token의 차이
 
-### Network 참고 자료
+### Network 목차 참고 자료
 - https://mangkyu.tistory.com/91
 - https://hyonee.tistory.com/136  
 - https://juicyjerry.tistory.com/196
