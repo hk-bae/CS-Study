@@ -75,8 +75,8 @@
 ## Design Pattern
 
 * [디자인패턴 개요(Overview)](https://github.com/hk-bae/CS-Study/blob/main/DesignPattern/Summary-of-DesignPattern.md)
-* 어댑터 패턴
-* 싱글톤 패턴
+* [어댑터 패턴](https://github.com/hk-bae/CS-Study/blob/main/DesignPattern/AdapterPattern.md)
+* [싱글톤 패턴](https://github.com/hk-bae/CS-Study/blob/main/DesignPattern/SingletonPattern.md)
 * 탬플릿 메소드 패턴
 * 팩토리 메소드 패턴
 * 옵저버 패턴
