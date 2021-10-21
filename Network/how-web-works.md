@@ -44,13 +44,13 @@
 
 ![image](https://user-images.githubusercontent.com/40057032/138212663-a9c1698a-ddf8-4734-a31c-4d60cb72a65c.png)
 
-- 웹 서버
-    - 웹 페이지, 사이트, 앱 등을 저장하는 프로그램
+- 웹 서버 (소프트웨어)
+    - 클라이언트의 HTTP 요청을 받아들이고, HTML 등 웹 페이지나 오브젝트(이미지나 파일 등)를 반환하는 서비스 프로그램
     - 클라이언트의 요청 HTTP 메시지를 확인하고 이에 맞게 데이터를 처리하여 클라이언트에 응답함
     - 아파치 웹 서버, GWS, IIS 등
 - WAS(Web Application Server)
-    - 웹 어플리케이션을 수행하는 미들웨어, 웹 서버를 보조하여 동작
-    - 요청에 필요한 동적 페이지 로직을 처리하거나 DB에서 데이터 정보를 가져옴
+    - 웹 어플리케이션을 수행하는 **미들웨어**, 웹 서버를 보조하여 동작
+    - 요청에 필요한 **동적** 페이지 로직을 처리하거나 DB에서 데이터 정보를 가져옴
     - 아파치 톰캣, 레진, 제이런 등
 - DB(Data Base): 자원을 정리하여 저장하는 보관소
 
@@ -63,9 +63,30 @@
 3. WAS가 처리를 끝내면 그 결과를 웹 서버로 보낸다
 4. 웹 서버는 요청에 필요한 데이터를 HTTP 응답 메시지로 클라이언트에게 전송한다
 
+![스크린샷 2021-10-21 오후 1 57 03](https://user-images.githubusercontent.com/40057032/138214052-21805427-0115-4552-aa22-8231f3569b4f.png)
+
+### (참고) WAS 
+
+- DB 조회 등 **동적인 컨텐츠**를 제공하기 위한 어플리케이션 서버
+    - 웹 서버는 정적 컨텐츠 담당, WAS는 동적 컨텐츠 담당(DB 조회 및 로직 처리)
+- 웹 컨테이너(Web Container), 서블릿 컨테이너(Servlet Container)라고도 불림
+    - 컨테이너: JSP, Servlet을 실행시킬 수 있는 소프트웨어
+    - JSP
+        - JavaServer Pages
+        - **HTML에 자바 코드를 삽입**해 웹 서버에서 동적으로 웹 페이지를 생성하는 서버 사이드 스크립트 언어
+        - 웹 컨테이너에서 서블릿으로 변환됨
+        - ![스크린샷 2021-10-21 오후 2 03 54](https://user-images.githubusercontent.com/40057032/138214651-f659c8a9-8e80-40c4-baf5-e79f38912e61.png)
+    - Servlet
+        - 자바를 이용해 웹페이지를 동적으로 생성하는 서버 프로그램
+        - **자바 코드 안에 HTML을 포함**
+        - ![스크린샷 2021-10-21 오후 2 06 34](https://user-images.githubusercontent.com/40057032/138214928-9258ebd6-2548-4b3b-8a91-57f5f8a14a5e.png)
+
+
 ## 참고자료
 
 - [https://developer.mozilla.org/ko/docs/Learn/Getting_started_with_the_web/How_the_Web_works](https://developer.mozilla.org/ko/docs/Learn/Getting_started_with_the_web/How_the_Web_works)
 - [http://tcpschool.com/webbasic/works](http://tcpschool.com/webbasic/works)
-- [https://d2.naver.com/helloworld/59361](https://d2.naver.com/helloworld/59361)
+- https://ko.wikipedia.org/wiki/%EC%9E%90%EB%B0%94_%EC%84%9C%EB%B8%94%EB%A6%BF
 - https://swimjiy.github.io/2019-11-03-How-Web-Works
+- https://gmlwjd9405.github.io/2018/10/27/webserver-vs-was.html
+- https://galid1.tistory.com/488
