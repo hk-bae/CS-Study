@@ -18,23 +18,122 @@
 <br/>
 
 ## 싱글톤 패턴 구현 방법
+1. **Eager Initialization (Early Loaing)**
 
-1. **Lazy Initialization (초기화 지연)**
-- synchronized 동기화를 활용해 스레드를 안전하게 만듦 (하지만, synchronized는 큰 성능저하를 발생시키므로 권장되지 않음)
-2. **Lazy Initialization + Double-checked Locking**
-- 1번의 성능 저하를 완화시키는 방법.
+``` 
+public class EagerSingleton {
+    private static EagerSingleton instance = new EagerSingleton();
+    
+    // private constructor
+    private EagerSingleton() {
+    }
+    
+    public static EagerSingleton getInstance() {
+        return instance;
+    }
+}
+```
+- 클래스 초기화시 instance 생성
+- **단점: 클라이언트에서 사용하지 않아도 instance를 항상 생성**
+
+<br/>
+<br/>
+
+
+2. **Lazy Initialization**
+
+
+``` 
+public class LazyInitializedSingleton {
+    private static LazyInitializedSingleton instance;
+    
+    private LazyInitializedSingleton() {}
+    
+    public static LazyInitializedSingleton getInstance(){
+        if(Objects.isNull(instance)) {
+            instance = new LazyInitializedSingleton();
+        }
+        return instance;
+    }
+}
+```
+- 1의 Eager Initialization의 단점을 보완한 방법. 
+- 객체 생성을 getInstance 메소드를 이용해서만 가능하게 하여, 클라이언트가 사용하지 않으면 생성하지 않도록 만듦.
+
+- **하지만 Thread-Safe하지 않음.**
+  - 여러 개의 thread가 동시에 getInstance()를 호출하는 상황에서 각자 instance가 null이라 판단하게 되고, 여러 개의 인스턴스가 생성되게 된다. 
+
+</br>
+
+
+2-1. **Thread-Safe Singleton**
+- getInstance()앞에 synchronized를 붙여 Thread-Safe하게 만듦
+
+- **단점: synchronized 사용시 큰 성능저하 발생**
+
+
+<br/>
+
+2-2. **Thread-Safe + Double Checked Locking**
+
+``` 
+public class ThreadSafe_Lazy_Initialization{
+    private volatile static ThreadSafe_Lazy_Initialization instance;
+
+    private ThreadSafe_Lazy_Initialization(){}
+
+    public static ThreadSafe_Lazy_Initialization getInstance(){
+    	if(instance == null) {
+        	synchronized (ThreadSafe_Lazy_Initialization.class){
+                if(instance == null){
+                    instance = new ThreadSafe_Lazy_Initialization();
+                }
+            }
+        }
+        return instance;
+    }
+}
+```
 - 1번과 달리, 먼저 조건문으로 인스턴스의 존재 여부를 확인한 다음 두번째 조건문에서 synchronized를 통해 동기화를 시켜 인스턴스를 생성하는 방법
+
+- 인스턴스를 레퍼런스하는 변수에 volatile 을 사용해줘야 한다. (jdk5 이상에서만 유효)
+- 스레드의 working memory와 메인메모리의 데이터 이동과정 때문에 동기화가 진행되는 동안 빈틈이 생기게 되므로 volatile을 이용한다.
+- volatile 로 선언된 변수는 아래와 같은 기능을 한다.
+  - 각 스레드가 해당 변수의 값을 메인 메모리에서 직접 읽어온다.
+  - volatile 변수에 대한 각 write 는 즉시 메인 메모리로 플러시 된다.
+  - 스레드가 변수를 캐시하기로 결정하면 각 read/write 시 메인 메모리와 동기화 된다.
+
+- **단점: 2-1보다 성능저하를 완화 시켰으나 완벽한 방법은 아니다.**
+
+<br/>
+<br/>
+
 3. **Initialization on demand holder idiom (holder에 의한 초기화)**
+
+``` 
+public class Something {
+    private Something() {
+    }
+ 
+    private static class LazyHolder {
+        public static final Something INSTANCE = new Something();
+    }
+ 
+    public static Something getInstance() {
+        return LazyHolder.INSTANCE;
+    }
+}
+```
+
 - 클래스 안에 클래스(holder)를 두어 JVM의 클래스 로더 매커니즘과 클래스가 로드되는 시점을 이용한 방법
-- JVM의 클래스 초기화 과정에서 보장되는 원자적 특성을 이용해 싱글톤의 초기화 문제에 대한 책임을 JVM에게 떠넘기는 걸 활용함
+- JVM의 클래스 초기화 과정에서 보장되는 원자적 특성을 이용해 싱글톤의 초기화 문제에 대한 책임을 JVM에게 떠넘김
+- JVM에게 싱글톤의 초기화 문제에 대한 책임을 넘겨 synchronized를 사용하지 않아도 되고, 1의 단점을 해결함
+
+<br/>
 <br/>
 
-(자세한 예시 코드 [https://github.com/gyoogle/tech-interview-for-developer/blob/master/Design Pattern/Singleton Pattern.md](https://github.com/gyoogle/tech-interview-for-developer/blob/master/Design%20Pattern/Singleton%20Pattern.md))
-
-![image](https://user-images.githubusercontent.com/49391145/138267548-6f0d0fab-4105-4f74-9481-a49c89cb9dfa.png)
-![image](https://user-images.githubusercontent.com/49391145/138267570-9525d92a-8a2c-4024-a480-803a0a774029.png)
-<br/>
-
-### 참고 자료
+### 출처
 
 - [https://github.com/gyoogle/tech-interview-for-developer/blob/master/Design Pattern/Singleton Pattern.md](https://github.com/gyoogle/tech-interview-for-developer/blob/master/Design%20Pattern/Singleton%20Pattern.md)
+- https://yaboong.github.io/design-pattern/2018/09/28/thread-safe-singleton-patterns/
+- https://en.wikipedia.org/wiki/Initialization-on-demand_holder_idiom
