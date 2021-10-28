@@ -62,7 +62,6 @@
 * RESTful API
 * HTTP Request Method
 * 브라우저 저장소
-
 * OAuth
 * Session, Cookie, Token의 차이
 
