@@ -52,17 +52,17 @@
 * [OSI 7 계층](https://github.com/hk-bae/CS-Study/blob/main/Network/network-osi-7-layers.md)
 * [TCP 3 way handshake & 4 way handshake](https://github.com/hk-bae/CS-Study/blob/main/Network/TCP-3-way%20handshake-4-way-handshake.md)
 * [HTTP & HTTPS](https://github.com/hk-bae/CS-Study/blob/main/Network/http-and-https.md)
-* TCP / IP 흐름제어 & 혼잡제어
-* TCP vs UDP 
-* Blocking & Non-Blocking I/O
-* [웹의 동작 방식](https://github.com/hk-bae/CS-Study/blob/main/Network/how-web-works.md)
-* 브라우저의 동작 방식
 * [DNS](https://github.com/hk-bae/CS-Study/blob/main/Network/dns.md)
+* [웹의 동작 방식](https://github.com/hk-bae/CS-Study/blob/main/Network/how-web-works.md)
+* [CORS](https://github.com/hk-bae/CS-Study/blob/main/Network/cors.md)
+* TCP / IP 흐름제어 & 혼잡제어
+* Blocking & Non-Blocking I/O
+* 브라우저의 동작 방식
 * 프록시 서버
 * RESTful API
 * HTTP Request Method
 * 브라우저 저장소
-* CORS
+
 * OAuth
 * Session, Cookie, Token의 차이
 
