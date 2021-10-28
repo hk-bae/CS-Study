@@ -5,8 +5,6 @@
 - **교차 출처(Cross-Origin):** 다른 출처를 말함
 - **출처(Origin):** Scheme(Protocol) + Host + Port
     - 출처가 같으려면, **Scheme, Host, Port**가 같아야 한다.
-        - 참고) IE는 출처 비교 시 Port 번호를 완전히 무시한다.
-        - 서브 도메인 이름은 달라도 상관 없다.
     - Port는 생략 가능하다. HTTP, HTTPS 프로토콜 기본 포트 넘버가 정해져 있기 때문에 http Scheme에서 Port가 생략되면 80번 포트라고 가정한다.
       ![image](https://user-images.githubusercontent.com/40057032/139194002-9d382432-b0aa-4432-aa39-37c4135a9e5a.png)
       ⇒ 정책에 따라 다른 출처로 자원을 요청하면 CORS 오류가 발생할 수 있다.  
